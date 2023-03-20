@@ -1,7 +1,5 @@
 import mongoose, { model, Schema} from "mongoose";
 
-//transformer user  en pokemon
-
 export const PassengerSchema = new Schema({
     
     Name: {

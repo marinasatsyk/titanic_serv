@@ -6,21 +6,21 @@ import bcrypt from 'bcrypt';
 
 const router = express.Router();
 
-router.get('/pokemons', async(req, res) => {
+router.get('/passengers', async(req, res) => {
     try {
-        const pokemons = await PassengerModel.find({});
-        res.json({pokemons})
+        const passengers = await PassengerModel.find({});
+        res.json({passengers})
 
     }catch(err){
-        res.json({error: 'No dataset /pokemons'})
+        res.json({error: 'No dataset /passengers'})
     }
 })
 
-router.get("/pokemons/find/:id", async(req, res) => {
+router.get("/passengers/find/:id", async(req, res) => {
     try{
         const {id} = req.params;
-        const pokemon = await PokemonModel.find({_id: id});
-        res.json({pokemon})
+        const passenger = await PassengerModel.find({_id: id});
+        res.json({passenger})
 
     }catch(err){
         res.json({error: 'No dataset id'})
@@ -29,12 +29,12 @@ router.get("/pokemons/find/:id", async(req, res) => {
 
 
 
-router.post( '/pokemons/add', (req, res) => {
+router.post( '/passengers/add', (req, res) => {
     try
     {
-        const newPokemon = req.body.body;
-        PokemonModel.insertMany([ newPokemon ]).then( () => {
-            res.json({ message: 'pokemon ajouté avec succès' })
+        const newPassenger = req.body.body;
+        PassengerModel.insertMany([ newPassenger ]).then( () => {
+            res.json({ message: 'passenger ajouté avec succès' })
         });
     }
     catch( error )
@@ -44,12 +44,12 @@ router.post( '/pokemons/add', (req, res) => {
 });
 
 
-router.delete( '/pokemons/delete', (req, res) => {
+router.delete( '/passengers/delete', (req, res) => {
     try
     {
-        const pokemonToDelete = req.body;
-        PokemonModel.deleteOne( pokemonToDelete ).then( () => {
-            res.json({ message: 'pokemon supprimé avec succès' })
+        const passengerToDelete = req.body;
+        PassengerModel.deleteOne( passengerToDelete ).then( () => {
+            res.json({ message: 'passenger supprimé avec succès' })
         });
     }
     catch( error )
@@ -67,7 +67,7 @@ router.get("/", async(req, res) =>{
     }
 })
 
-
+/**login password */
 router.post('/users/login', async(req, res) => {
    try 
    {
