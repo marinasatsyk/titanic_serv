@@ -1,0 +1,21 @@
+{
+  "name": "demoapi",
+  "version": "1.0.0",
+  "description": "une api demo pour la session angular11",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "populate": "node hydrate.js"
+  },
+  "keywords": [],
+  "author": "Marina Darde",
+  "type": "module",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.9.2",
+    "nodemon": "^2.0.20"
+  }
+}
